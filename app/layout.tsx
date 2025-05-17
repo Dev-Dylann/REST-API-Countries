@@ -20,13 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} antialiased`}>
-        <header className="px-5 py-5 flex justify-between items-center shadow">
+      <body className={`${nunito.className} antialiased bg-light-bg`}>
+        <header className="px-5 py-5 flex justify-between items-center shadow bg-white">
           <h1 className="font-bold text-xl">Where in the world?</h1>
 
           <button className="border border-black">Dark Mode</button>
         </header>
-        {children}
+
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
