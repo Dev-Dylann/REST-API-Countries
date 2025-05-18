@@ -1,5 +1,7 @@
 "use client"
 
+import { MoonIcon } from "@heroicons/react/24/outline"
+
 export default function ThemeToggler() {
 
     const toggleDarkMode = () => {
@@ -7,6 +9,9 @@ export default function ThemeToggler() {
     }
 
     return (
-        <button className="border font-medium dark:text-white" onClick={toggleDarkMode}>Dark Mode</button>
+        <button className="font-semibold dark:text-white flex gap-2 py-2 px-2" onClick={toggleDarkMode}>
+            <MoonIcon className="h-5 w-5" />
+            Dark Mode
+        </button>
     )
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { ChevronDownIcon } from "@heroicons/react/24/solid"
 
 export default function RegionFilter() {
 
@@ -13,7 +14,7 @@ export default function RegionFilter() {
         <div className="bg-white px-5 py-4 shadow self-start flex justify-between items-center rounded-lg relative w-2/3 max-w-[250px] font-semibold dark:bg-dark-elements" onClick={() => setOpenFilter(prev => !prev)}>
             <p className="">{filter || "Filter by region"}</p>
 
-            &#8964;
+            <ChevronDownIcon className="h-5 w-5" />
 
             {openFilter && (
                 <div className="bg-white shadow rounded-lg flex flex-col gap-2 absolute px-5 py-3 top-[110%] left-0 w-full dark:bg-dark-elements">
