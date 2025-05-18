@@ -13,6 +13,7 @@ export default function CountryCard({ country }: CountryCardProps) {
                 alt={country.flags.alt}
                 width={320}
                 height={210}
+                className="w-full h-auto"
             />
 
             <div className="flex flex-col gap-1 px-5 py-8">
