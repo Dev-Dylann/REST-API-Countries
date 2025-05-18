@@ -1,13 +1,18 @@
 "use client"
 
-import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useDebouncedCallback } from "use-debounce";
 
 export default function SearchInput() {
     const searchParams = useSearchParams()
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    function handleSearch(query: string) {
+    const [inputValue, setInputValue] = useState('')
+
+    const handleSearch = useDebouncedCallback((query: string) => {
         const params = new URLSearchParams(searchParams);
 
         if (query) {
@@ -17,11 +22,23 @@ export default function SearchInput() {
         }
 
         replace(`${pathname}?${params.toString()}`);
+    }, 500)
+
+    const clearQuery = () => {
+        handleSearch('')
+        setInputValue('')
     }
 
     return (
-        <input type="text" className="shadow w-full px-5 py-4 bg-white rounded-lg focus:outline-0 dark:bg-dark-elements" placeholder="Search for a country" onChange={(e) => {
-            handleSearch(e.target.value);
-        }} />
+        <form className="shadow w-full px-5 py-4 bg-white rounded-lg dark:bg-dark-elements flex gap-4 items-center" onSubmit={(e) => e.preventDefault()}>
+            <MagnifyingGlassIcon className="h-5 w-5 text-light-input" />
+
+            <input type="text" className="focus:outline-0 grow" placeholder="Search for a country" value={inputValue} onChange={(e) => {
+                handleSearch(e.target.value);
+                setInputValue(e.target.value);
+            }} />
+
+            {inputValue && <button onClick={clearQuery}><XMarkIcon className="h-5 w-5 text-light-input" /></button>}
+        </form>
     )
 }
