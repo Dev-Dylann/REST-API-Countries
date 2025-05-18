@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
+import ThemeToggler from "./components/ThemeToggler";
 
 const nunito = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -19,12 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${nunito.className} antialiased bg-light-bg`}>
-        <header className="px-5 py-5 flex justify-between items-center shadow bg-white">
-          <h1 className="font-bold text-xl">Where in the world?</h1>
+    <html lang="en" className="">
+      <body className={`${nunito.className} antialiased bg-light-bg font-light dark:bg-dark-bg dark:text-white`}>
+        <header className="px-5 py-5 flex justify-between items-center shadow bg-white dark:bg-dark-elements">
+          <h1 className="font-extrabold text-xl">Where in the world?</h1>
 
-          <button className="border border-black">Dark Mode</button>
+          <ThemeToggler />
         </header>
 
         <main>
