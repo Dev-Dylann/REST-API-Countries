@@ -12,7 +12,7 @@ export default async function Home() {
   const countries: Country[] = await data.json()
 
   return (
-    <section className="px-5 py-8 flex flex-col items-center gap-8 md:px-10 lg:px-20">
+    <section className="px-5 py-8 flex flex-col items-center gap-8 md:px-10 lg:px-20 xl:max-w-[1350px] xl:mx-auto">
       <div className="flex flex-col gap-8 w-full lg:flex-row lg:justify-between">
         <SearchInput />
 

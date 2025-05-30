@@ -22,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="">
       <body className={`${nunito.className} antialiased bg-light-bg font-light dark:bg-dark-bg dark:text-white`}>
-        <header className="px-5 py-5 flex justify-between items-center shadow bg-white dark:bg-dark-elements md:px-10 lg:px-20">
-          <h1 className="font-extrabold text-xl md:text-2xl">Where in the world?</h1>
+        <header className="shadow bg-white dark:bg-dark-elements">
+          <section className="px-5 py-5 flex justify-between items-center md:px-10 lg:px-20 xl:max-w-[1350px] xl:mx-auto">
+            <h1 className="font-extrabold text-xl md:text-2xl">Where in the world?</h1>
 
-          <ThemeToggler />
+            <ThemeToggler />
+          </section>
         </header>
 
         <main>
