@@ -9,7 +9,7 @@ export default function ThemeToggler() {
     }
 
     return (
-        <button className="font-semibold dark:text-white flex gap-2 py-2 px-2" onClick={toggleDarkMode}>
+        <button className="font-semibold dark:text-white flex gap-2 py-2 px-2 lg:text-lg lg:items-center lg:gap-3" onClick={toggleDarkMode}>
             <MoonIcon className="h-5 w-5" />
             Dark Mode
         </button>

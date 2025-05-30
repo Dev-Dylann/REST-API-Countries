@@ -12,10 +12,12 @@ export default async function Home() {
   const countries: Country[] = await data.json()
 
   return (
-    <section className="px-5 py-8 flex flex-col items-center gap-8 md:px-10">
-      <SearchInput />
+    <section className="px-5 py-8 flex flex-col items-center gap-8 md:px-10 lg:px-20">
+      <div className="flex flex-col gap-8 w-full lg:flex-row lg:justify-between">
+        <SearchInput />
 
-      <RegionFilter />
+        <RegionFilter />
+      </div>
 
       <CountryList countries={countries} />
     </section>

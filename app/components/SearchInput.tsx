@@ -30,7 +30,7 @@ export default function SearchInput() {
     }
 
     return (
-        <form className="shadow w-full px-5 py-4 bg-white rounded-lg dark:bg-dark-elements flex gap-4 items-center" onSubmit={(e) => e.preventDefault()}>
+        <form className="shadow w-full px-5 py-4 bg-white rounded-lg dark:bg-dark-elements flex gap-4 items-center lg:max-w-[512px]" onSubmit={(e) => e.preventDefault()}>
             <MagnifyingGlassIcon className="h-5 w-5 text-light-input" />
 
             <input type="text" className="focus:outline-0 grow" placeholder="Search for a country" value={inputValue} onChange={(e) => {

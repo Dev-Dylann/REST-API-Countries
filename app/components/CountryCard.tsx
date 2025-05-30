@@ -8,7 +8,7 @@ type CountryCardProps = {
 export default function CountryCard({ country }: CountryCardProps) {
 
     return (
-        <Link href={`/${country.cca3}`} className="flex flex-col rounded-lg overflow-hidden bg-white shadow dark:bg-dark-elements">
+        <Link href={`/${country.cca3}`} className="flex flex-col rounded-lg overflow-hidden bg-white shadow dark:bg-dark-elements w-full md:h-full hover:scale-105 transition-all">
             <Image
                 src={country.flags.svg}
                 alt={country.flags.alt}
