@@ -28,5 +28,6 @@ type Country = {
         png: string;
         svg: string;
         alt: string;
-    }
+    },
+    cca3: string
 };

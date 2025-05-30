@@ -8,7 +8,7 @@ import SearchInput from "./components/SearchInput";
 
 export default async function Home() {
 
-  const data = await fetch('https://restcountries.com/v3.1/all?fields=name,nativename,population,region,subregion,capital,tld,currencies,languages,borders,flags')
+  const data = await fetch('https://restcountries.com/v3.1/all?fields=name,nativename,population,region,subregion,capital,tld,currencies,languages,borders,flags,cca3')
   const countries: Country[] = await data.json()
 
   return (

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 type CountryCardProps = {
     country: Country,
@@ -7,7 +8,7 @@ type CountryCardProps = {
 export default function CountryCard({ country }: CountryCardProps) {
 
     return (
-        <div className="flex flex-col rounded-lg overflow-hidden bg-white shadow dark:bg-dark-elements">
+        <Link href={`/${country.cca3}`} className="flex flex-col rounded-lg overflow-hidden bg-white shadow dark:bg-dark-elements">
             <Image
                 src={country.flags.svg}
                 alt={country.flags.alt}
@@ -23,6 +24,6 @@ export default function CountryCard({ country }: CountryCardProps) {
                 <p><span className="font-semibold">Region:</span> {country.region}</p>
                 <p><span className="font-semibold">Capital:</span> {country.capital}</p>
             </div>
-        </div>
+        </Link>
     )
 }
