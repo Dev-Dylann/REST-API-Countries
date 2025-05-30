@@ -38,7 +38,7 @@ export default function CountryList({ countries }: CountryListProps) {
 
 
     return (
-        <article className="flex flex-col gap-8 items-center px-5">
+        <article className="flex flex-col gap-8 items-center px-5 md:px-10 md:grid md:grid-cols-2 md:gap-10 md:items-start">
             {filteredCountries.length !== 0 ? (
                 filteredCountries.map((country, index) => <CountryCard key={`country${index}`} country={country} />)
             ) : (
