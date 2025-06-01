@@ -66,7 +66,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
                 <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-xl">Border Countries:</h3>
 
                 <div className="flex flex-wrap gap-4">
-                    {borderCountries.map((border, index) => (
+                    {borderCountries.map((border) => (
                         <Link key={`border${border.cca3}`} href={`/${border.cca3}`} className="px-6 py-2 bg-white shadow-lg dark:bg-dark-elements w-fit rounded-lg">
                             {border.name.common}
                         </Link>

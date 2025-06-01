@@ -28,7 +28,7 @@ export default function RegionFilter() {
         const region = params.get('region')
 
         setFilter(region ?? '')
-    }, [])
+    }, [searchParams])
 
     return (
         <div className="bg-white px-5 py-4 shadow self-start flex justify-between items-center rounded-lg relative w-2/3 max-w-[250px] font-semibold dark:bg-dark-elements cursor-pointer" onClick={() => setOpenFilter(prev => !prev)}>
