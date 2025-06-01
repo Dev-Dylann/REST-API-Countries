@@ -73,13 +73,15 @@ export default async function CountryPage({ params }: CountryPageProps) {
             <article className="flex flex-col gap-4 md:text-lg lg:text-xl xl:col-span-2 xl:text-lg">
                 <h3 className="font-semibold text-lg md:text-xl lg:text-2xl xl:text-xl">Border Countries:</h3>
 
-                <div className="flex flex-wrap gap-4">
-                    {borderCountries.map((border) => (
-                        <Link key={`border${border.cca3}`} href={`/${border.cca3}`} className="px-6 py-2 bg-white shadow-lg dark:bg-dark-elements w-fit rounded-lg">
-                            {border.name.common}
-                        </Link>
-                    ))}
-                </div>
+                {country.borders.length > 0 && (
+                    <div className="flex flex-wrap gap-4">
+                        {borderCountries.map((border) => (
+                            <Link key={`border${border.cca3}`} href={`/${border.cca3}`} className="px-6 py-2 bg-white shadow-lg dark:bg-dark-elements w-fit rounded-lg">
+                                {border.name.common}
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </article>
         </section>
     )
