@@ -12,7 +12,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
 
     const data = await fetch(`https://restcountries.com/v3.1/alpha/${countryId}?fields=name,nativename,population,region,subregion,capital,tld,currencies,languages,borders,flags,cca3`)
     if (!data.ok) {
-        return <div>Failed to fetch</div>
+        throw new Error()
     }
 
     const country: Country = await data.json()
