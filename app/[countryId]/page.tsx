@@ -11,13 +11,21 @@ export default async function CountryPage({ params }: CountryPageProps) {
     const { countryId } = await params
 
     const data = await fetch(`https://restcountries.com/v3.1/alpha/${countryId}?fields=name,nativename,population,region,subregion,capital,tld,currencies,languages,borders,flags,cca3`)
+    if (!data.ok) {
+        return <div>Failed to fetch</div>
+    }
+
     const country: Country = await data.json()
 
     // the nativename object contins different language codes so im just getting the first one and using it later on
-    const nativeCode = Object.keys(country.name.nativeName)[0]
+    const nativeCode = country.name?.nativeName
+        ? Object.keys(country.name.nativeName)[0]
+        : null;
 
     // same situation as above
-    const currencyCode = Object.keys(country.currencies)[0]
+    const currencyCode = country.currencies
+        ? Object.keys(country.currencies)[0]
+        : null;
 
     // fetch border countries
     const borderIds = country.borders.join(",")
@@ -42,7 +50,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
             <h2 className="font-extrabold text-2xl md:text-3xl lg:text-4xl xl:col-span-2 xl:text-3xl">{country.name.common}</h2>
 
             <article className="flex flex-col gap-2 md:text-lg lg:text-xl xl:text-lg">
-                <p><span className="font-semibold">Native Name:</span> {country.name.nativeName[nativeCode].common}</p>
+                <p><span className="font-semibold">Native Name:</span> {country.name.nativeName[nativeCode!].common}</p>
 
                 <p><span className="font-semibold">Population:</span> {country.population.toLocaleString()}</p>
 
@@ -56,7 +64,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
             <article className="flex flex-col gap-2 md:text-lg lg:text-xl xl:text-lg">
                 <p><span className="font-semibold">Top Level Domain:</span> {country.tld[0]}</p>
 
-                <p><span className="font-semibold">Currencies:</span> {country.currencies[currencyCode].name}</p>
+                <p><span className="font-semibold">Currencies:</span> {country.currencies[currencyCode!].name}</p>
 
                 <p><span className="font-semibold">Languages:</span> {Object.values(country.languages).join(", ")}</p>
 
