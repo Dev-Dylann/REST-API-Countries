@@ -4,6 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useDebouncedCallback } from "use-debounce";
+import { Suspense } from "react";
 
 export default function SearchInput() {
     const searchParams = useSearchParams()
@@ -30,15 +31,17 @@ export default function SearchInput() {
     }
 
     return (
-        <form className="shadow w-full px-5 py-4 bg-white rounded-lg dark:bg-dark-elements flex gap-4 items-center lg:max-w-[512px]" onSubmit={(e) => e.preventDefault()}>
-            <MagnifyingGlassIcon className="h-5 w-5 text-light-input" />
+        <Suspense>
+            <form className="shadow w-full px-5 py-4 bg-white rounded-lg dark:bg-dark-elements flex gap-4 items-center lg:max-w-[512px]" onSubmit={(e) => e.preventDefault()}>
+                <MagnifyingGlassIcon className="h-5 w-5 text-light-input" />
 
-            <input type="text" className="focus:outline-0 grow" placeholder="Search for a country" value={inputValue} onChange={(e) => {
-                handleSearch(e.target.value);
-                setInputValue(e.target.value);
-            }} />
+                <input type="text" className="focus:outline-0 grow" placeholder="Search for a country" value={inputValue} onChange={(e) => {
+                    handleSearch(e.target.value);
+                    setInputValue(e.target.value);
+                }} />
 
-            {inputValue && <button onClick={clearQuery}><XMarkIcon className="h-5 w-5 text-light-input" /></button>}
-        </form>
+                {inputValue && <button onClick={clearQuery}><XMarkIcon className="h-5 w-5 text-light-input" /></button>}
+            </form>
+        </Suspense>
     )
 }
