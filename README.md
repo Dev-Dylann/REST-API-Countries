@@ -25,9 +25,9 @@ Users should be able to:
 
 ### Screenshot
 
-![Homepage](/screenshot1.jpg)
+![Homepage](./public/screenshot1.png)
 
-![Country Details Page](/screenshot2.jpg)
+![Country Details Page](./public/screenshot2.png)
 
 ### Links
 
