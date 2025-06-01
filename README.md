@@ -12,6 +12,8 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Built with](#built-with)
 - [Author](#author)
 
+## Overview
+
 ### The challenge
 
 Users should be able to:
@@ -31,24 +33,20 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/rest-api-countries-with-theme-switcher-next-js-QPHvxIP4Gy)
+- [Live Site URL](https://rest-api-countries-pi-hazel.vercel.app/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
 - Mobile-first workflow
+- [Tailwind CSS](https://tailwindcss.com) - CSS Framework
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Heroicons](https://heroicons.com/) - For icons
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Dev-Dylann](https://www.frontendmentor.io/profile/Dev-Dylann)
+- Twitter/X - [@dev_dylann](https://www.x.com/dev_dylann)
