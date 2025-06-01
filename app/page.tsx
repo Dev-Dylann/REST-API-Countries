@@ -1,7 +1,6 @@
 import CountryList from "./components/CountryList";
-import RegionFilter from "./components/RegionFilter";
-import SearchInput from "./components/SearchInput";
-import { Suspense } from "react";
+import RegionFilterWrapper from "./components/RegionFilterWrapper";
+import SearchInputWrapper from "./components/SearchInputWrapper";
 
 export default async function Home() {
 
@@ -11,13 +10,9 @@ export default async function Home() {
   return (
     <section className="px-5 py-8 flex flex-col items-center gap-8 md:px-10 lg:px-20 xl:max-w-[1350px] xl:mx-auto">
       <div className="flex flex-col gap-8 w-full lg:flex-row lg:justify-between">
-        <Suspense>
-          <SearchInput />
-        </Suspense>
+        <SearchInputWrapper />
 
-        <Suspense>
-          <RegionFilter />
-        </Suspense>
+        <RegionFilterWrapper />
       </div>
 
       <CountryList countries={countries} />
