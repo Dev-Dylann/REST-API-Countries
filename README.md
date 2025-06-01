@@ -48,5 +48,5 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@Dev-Dylann](https://www.frontendmentor.io/profile/Dev-Dylann)
+- Frontend Mentor - [@Dev_Dylann](https://www.frontendmentor.io/profile/Dev-Dylann)
 - Twitter/X - [@dev_dylann](https://www.x.com/dev_dylann)
