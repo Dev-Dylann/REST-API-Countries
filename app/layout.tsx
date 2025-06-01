@@ -9,7 +9,7 @@ const nunito = Nunito_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Frontend Mentor | Space Tourism Website",
+  title: "Frontend Mentor | REST Countries API with color theme switcher",
   description: "Submitted as a solution to a challenge from FrontEnd Mentor",
   authors: [{ name: "DevDylan", url: '' }],
 };
