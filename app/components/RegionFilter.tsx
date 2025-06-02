@@ -12,7 +12,7 @@ export default function RegionFilter() {
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    const regions = ["Africa", "America", "Asia", "Europe", "Oceania"]
+    const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"]
 
     const handleRegionChange = (region: string) => {
         const params = new URLSearchParams(searchParams)

@@ -42,7 +42,7 @@ export default function CountryList({ countries }: CountryListProps) {
             {filteredCountries.length !== 0 ? (
                 filteredCountries.map((country, index) => <CountryCard key={`country${index}`} country={country} />)
             ) : (
-                <p className="text-xl text-center">No countries matched your search</p>
+                <p className="text-xl text-center md:col-span-full">No countries matched your search</p>
             )}
 
         </article>
